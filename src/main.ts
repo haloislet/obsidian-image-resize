@@ -4,6 +4,8 @@ import {
 	Plugin
 } from "obsidian";
 
+import { setSize, clearSize } from "./convert"
+
 export default class MyPlugin extends Plugin {
 	async onload() {
 		this.registerEvent(
@@ -21,7 +23,7 @@ export default class MyPlugin extends Plugin {
 			item.setTitle("宽度调整为 300")
 				.setIcon("image")
 				.onClick(() => {
-					const text = selectedText.replace(/\[\]/g, "[300]");
+					const text = setSize(selectedText, 300)
 					editor.replaceSelection(text);
 				});
 		});
@@ -29,10 +31,11 @@ export default class MyPlugin extends Plugin {
 			item.setTitle("清空宽度")
 				.setIcon("image")
 				.onClick(() => {
-					const text = selectedText.replace(/\[.*?\]/g, "[]");
+					const text = clearSize(selectedText)
 					editor.replaceSelection(text);
 				});
 		});
 		return true;
 	}
+	
 }
