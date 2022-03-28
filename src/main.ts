@@ -82,7 +82,6 @@ class SampleSettingTab extends PluginSettingTab {
 				.onChange(async (value) => {
 					this.plugin.settings.size = value;
 					await this.plugin.saveSettings();
-					new Notice('This is a notice!');
 				}));
 	}
 }
