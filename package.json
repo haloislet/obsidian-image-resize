@@ -1,7 +1,7 @@
 {
 	"name": "obsidian-image-resize",
 	"pluginName": "Image Resize",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "resize image plugin",
 	"main": "main.js",
 	"scripts": {
